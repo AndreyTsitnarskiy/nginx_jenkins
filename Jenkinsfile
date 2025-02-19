@@ -1,6 +1,5 @@
 pipeline {
     agent any
-    ansiColor('xterm')
     stages {
         stage('Hello') {
             steps {
@@ -10,7 +9,9 @@ pipeline {
             }
         }
         stage('Check nginx'){
+            steps {
             sh 'systemctl status nginx'
+            }
         }
     }
     post { 
